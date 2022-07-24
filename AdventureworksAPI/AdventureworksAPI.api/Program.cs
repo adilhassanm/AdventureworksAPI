@@ -1,4 +1,5 @@
 using AdventureworksAPI.api.Data;
+using AdventureworksAPI.api.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<AdventurewalksDBContext>(
 
    }
    );
+builder.Services.AddScoped<IPersonrepository, PersonRepository>();
 
 var app = builder.Build();
 
